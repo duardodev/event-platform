@@ -6,53 +6,23 @@ import {
   Image,
   CircleNotch
 } from 'phosphor-react';
-
 import { DefaultUi, Player, Youtube } from '@vime/react';
-import { gql, useQuery } from '@apollo/client';
+import { useGetLessonBySlugQuery } from '../graphql/generated';
 
 import '@vime/core/themes/default.css';
-
-const GET_LESSON_BY_SLUG_QUERY = gql`
-  query GetLessonBySlug($slug: String) {
-    lesson(where: { slug: $slug }) {
-      videoId
-      id
-      title
-      description
-      teacher {
-        avatarURL
-        bio
-        name
-      }
-    }
-  }
-`;
 
 interface VideoProps {
   lessonSlug: string;
 }
 
-interface GetLessonBySlugResponse {
-  lesson: {
-    title: string;
-    description: string;
-    videoId: string;
-    teacher: {
-      avatarURL: string;
-      bio: string;
-      name: string;
-    };
-  };
-}
-
-export function Video({ lessonSlug }: VideoProps) {
-  const { data } = useQuery<GetLessonBySlugResponse>(GET_LESSON_BY_SLUG_QUERY, {
+export function Video(props: VideoProps) {
+  const { data } = useGetLessonBySlugQuery({
     variables: {
-      slug: lessonSlug
+      slug: props.lessonSlug
     }
   });
 
-  if (!data) {
+  if (!data || !data.lesson) {
     return (
       <div className="h-[80vh] flex flex-1 items-center justify-center">
         <CircleNotch size={40} color="#00875F" className="animate-spin max-h-[60vh]" />
@@ -77,18 +47,20 @@ export function Video({ lessonSlug }: VideoProps) {
             <h1 className="text-2xl font-bold mb-4">{data.lesson.title}</h1>
             <p className="text-gray-200 leading-relaxed">{data.lesson.description}</p>
 
-            <div className="mt-6 flex items-center gap-4">
-              <img
-                src={data.lesson.teacher.avatarURL}
-                alt=""
-                className="h-16 w-16 rounded-full border-2 border-blue-500"
-              />
+            {data.lesson.teacher && (
+              <div className="mt-6 flex items-center gap-4">
+                <img
+                  src={data.lesson.teacher.avatarURL}
+                  alt=""
+                  className="h-16 w-16 rounded-full border-2 border-blue-500"
+                />
 
-              <div className="leading-relaxed">
-                <strong className="text-2xl font-bold block">{data.lesson.teacher.name}</strong>
-                <span className="text-sm text-gray-200 block">{data.lesson.teacher.bio}</span>
+                <div className="leading-relaxed">
+                  <strong className="text-2xl font-bold block">{data.lesson.teacher.name}</strong>
+                  <span className="text-sm text-gray-200 block">{data.lesson.teacher.bio}</span>
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           <div className="flex flex-col gap-4">

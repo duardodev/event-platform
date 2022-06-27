@@ -2,6 +2,9 @@ import { useState, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCreateSubscriberMutation } from '../graphql/generated';
 
+import logoIgniteLab from '../assets/logo.svg';
+import codeMockupImg from '../../src/assets/code-mockup.png';
+
 export function Subscribe() {
   const navigate = useNavigate();
 
@@ -27,7 +30,7 @@ export function Subscribe() {
     <div className="min-h-screen bg-blur bg-no-repeat bg-cover flex flex-col items-center">
       <div className="w-full max-w-[1100px] mt-20 flex items-center justify-between">
         <div className="max-w-[640px]">
-          <img src="/src/assets/logo.svg" alt="" />
+          <img src={logoIgniteLab} alt="" />
 
           <h1 className="text-[2.5rem] leading-tight mt-8">
             Construa uma <strong className="text-blue-500">aplicação completa</strong>, do zero, com{' '}
@@ -67,7 +70,7 @@ export function Subscribe() {
         </div>
       </div>
 
-      <img src="/src/assets/code-mockup.png" className="mt-10" alt="" />
+      <img src={codeMockupImg} className="mt-10" alt="" />
     </div>
   );
 }

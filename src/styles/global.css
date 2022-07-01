@@ -16,5 +16,5 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-green-500 rounded-[3px];
+  @apply bg-blue-500 rounded-[3px];
 }

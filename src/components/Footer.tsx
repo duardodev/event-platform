@@ -16,7 +16,7 @@ export function Footer() {
             <a
               href="https://github.com/sampaiocode"
               target="_blank"
-              className="text-green-300 hover:text-green-500 transition-colors"
+              className="text-blue-300 hover:text-blue-500 transition-colors"
             >
               sampaiocode
             </a>

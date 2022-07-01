@@ -17,7 +17,7 @@ export function PageNotFound() {
 
         <Link
           to="/"
-          className="mt-8 text-sm uppercase font-bold p-4 rounded bg-green-500 hover:bg-green-700 transition-colors flex items-center justify-center gap-[10px]"
+          className="mt-8 text-sm uppercase font-bold p-4 rounded bg-blue-500 hover:bg-blue-700 transition-colors flex items-center justify-center gap-[10px]"
         >
           <CaretCircleLeft size={24} />
           Retorne à página inicial

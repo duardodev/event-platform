@@ -25,7 +25,7 @@ export function Video(props: VideoProps) {
   if (!data || !data.lesson) {
     return (
       <div className="h-[80vh] flex flex-1 items-center justify-center">
-        <CircleNotch size={40} color="#00875F" className="animate-spin max-h-[60vh]" />
+        <CircleNotch size={40} color="#0d58bb" className="animate-spin max-h-[60vh]" />
       </div>
     );
   }
@@ -52,7 +52,7 @@ export function Video(props: VideoProps) {
                 <img
                   src={data.lesson.teacher.avatarURL}
                   alt=""
-                  className="h-16 w-16 rounded-full border-2 border-blue-500"
+                  className="h-16 w-16 rounded-full border-2 border-cyan-500"
                 />
 
                 <div className="leading-relaxed">
@@ -66,7 +66,7 @@ export function Video(props: VideoProps) {
           <div className="flex flex-col gap-4">
             <a
               href="#"
-              className="p-4 bg-green-500 text-sm font-bold uppercase rounded flex items-center gap-[10px] hover:bg-green-700 transition-colors"
+              className="p-4 bg-blue-500 text-sm font-bold uppercase rounded flex items-center gap-[10px] hover:bg-blue-700 transition-colors"
             >
               <DiscordLogo size={24} />
               Comunidade no Discord
@@ -74,7 +74,7 @@ export function Video(props: VideoProps) {
 
             <a
               href="#"
-              className="p-4 text-sm font-bold uppercase text-blue-500 border border-blue-500 rounded flex items-center justify-center gap-[10px] hover:bg-blue-500 hover:text-gray-900 transition-colors"
+              className="p-4 text-sm font-bold uppercase text-cyan-500 border border-cyan-500 rounded flex items-center justify-center gap-[10px] hover:bg-cyan-500 hover:text-gray-900 transition-colors"
             >
               <Lightning size={24} />
               Acesse o desafio
@@ -86,7 +86,7 @@ export function Video(props: VideoProps) {
             href=""
             className="bg-gray-700 rounded overflow-hidden flex items-start gap-6 hover:bg-gray-600 transition-colors"
           >
-            <div className="bg-green-700 h-full p-6 flex items-center">
+            <div className="bg-blue-700 h-full p-6 flex items-center">
               <FileArrowDown size={40} />
             </div>
             <div className="py-6 leading-relaxed">
@@ -104,7 +104,7 @@ export function Video(props: VideoProps) {
             href=""
             className="bg-gray-700 rounded overflow-hidden flex items-start gap-6 hover:bg-gray-600 transition-colors"
           >
-            <div className="bg-green-700 h-full p-6 flex items-center">
+            <div className="bg-blue-700 h-full p-6 flex items-center">
               <Image size={40} />
             </div>
             <div className="py-6 leading-relaxed">

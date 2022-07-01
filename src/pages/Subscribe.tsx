@@ -35,8 +35,8 @@ export function Subscribe() {
             <img src={logoIgniteLab} alt="" />
 
             <h1 className="text-[2.5rem] leading-tight mt-8">
-              Construa uma <strong className="text-blue-500">aplicação completa</strong>, do zero,
-              com <strong className="text-blue-500">React JS</strong>
+              Construa uma <strong className="text-cyan-500">aplicação completa</strong>, do zero,
+              com <strong className="text-cyan-500">React JS</strong>
             </h1>
             <p className="text-gray-200 mt-6">
               Em apenas uma semana você vai dominar na prática uma das tecnologias mais utilizadas e
@@ -51,20 +51,20 @@ export function Subscribe() {
               <input
                 type="text"
                 placeholder="Seu nome completo"
-                className="bg-gray-900 h-14 px-5 rounded outline-none border-2 border-transparent focus:border-green-500 "
+                className="bg-gray-900 h-14 px-5 rounded outline-none border-2 border-transparent focus:border-blue-500 "
                 onChange={event => setName(event.target.value)}
               />
               <input
                 type="email"
                 placeholder="Digite seu e-mail"
-                className="bg-gray-900 h-14 px-5 rounded outline-none border-2 border-transparent focus:border-green-500"
+                className="bg-gray-900 h-14 px-5 rounded outline-none border-2 border-transparent focus:border-blue-500"
                 onChange={event => setEmail(event.target.value)}
               />
 
               <button
                 type="submit"
                 disabled={loading}
-                className="bg-green-500 text-white text-sm font-bold uppercase py-4 mt-4 rounded hover:bg-green-700 transition-colors disabled:opacity-50"
+                className="bg-blue-500 text-white text-sm font-bold uppercase py-4 mt-4 rounded hover:bg-blue-700 transition-colors disabled:opacity-50"
               >
                 Garantir minha vaga
               </button>

@@ -1,10 +1,10 @@
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Footer } from '../components/Footer';
 import { useCreateSubscriberMutation } from '../graphql/generated';
 
 import logoIgniteLab from '../assets/logo.svg';
 import codeMockupImg from '../../src/assets/code-mockup.png';
-import { Footer } from '../components/Footer';
 
 export function Subscribe() {
   const navigate = useNavigate();
@@ -24,8 +24,15 @@ export function Subscribe() {
       }
     });
 
+    localStorage.setItem('registered', 'true');
     navigate('/platform');
   }
+
+  useEffect(() => {
+    if (localStorage.getItem('registered')) {
+      navigate('/platform');
+    }
+  }, []);
 
   return (
     <>

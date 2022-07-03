@@ -20,7 +20,7 @@ export function PageNotFound() {
           className="mt-8 text-sm uppercase font-bold p-4 rounded bg-blue-500 hover:bg-blue-700 transition-colors flex items-center justify-center gap-[10px]"
         >
           <CaretCircleLeft size={24} />
-          Retorne à página inicial
+          Retorne à página anterior
         </Link>
       </div>
     </div>

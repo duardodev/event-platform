@@ -37,22 +37,22 @@ export function Subscribe() {
   return (
     <>
       <div className="min-h-screen bg-blur bg-no-repeat bg-cover flex flex-col items-center">
-        <div className="w-full max-w-[1100px] mt-20 flex items-center justify-between">
-          <div className="max-w-[640px]">
+        <div className="w-full max-w-[1100px] mt-10 flex flex-col items-center justify-center md:mt-20 md:flex-row md:items-center sm:justify-between ">
+          <div className="max-w-[640px] mx-6 flex flex-col items-center justify-center md:justify-start md:items-start">
             <img src={logoIgniteLab} alt="" />
 
-            <h1 className="text-[2.5rem] leading-tight mt-8">
+            <h1 className="text-3xl leading-tight mt-8 text-center sm:text-[2.5rem] md:text-start">
               Construa uma <strong className="text-cyan-500">aplicação completa</strong>, do zero,
               com <strong className="text-cyan-500">React JS</strong>
             </h1>
-            <p className="text-gray-200 mt-6">
+            <p className="text-sm text-gray-200 mt-6 text-center md:text-start sm:text-base">
               Em apenas uma semana você vai dominar na prática uma das tecnologias mais utilizadas e
               com alta demanda para acessar as melhores oportunidades do mercado.
             </p>
           </div>
 
-          <div className="bg-gray-700 border border-gray-500 rounded p-8">
-            <strong className="mb-6 text-2xl block">Inscreva-se gratuitamente</strong>
+          <div className="bg-gray-700 border border-gray-500 rounded py-8 px-6 mt-8 md:mx-6 md:mt-0">
+            <strong className="mb-6 text-lg block sm:text-2xl">Inscreva-se gratuitamente</strong>
 
             <form onSubmit={handleSubscribe} className="flex flex-col gap-2 w-full">
               <input
@@ -79,7 +79,9 @@ export function Subscribe() {
           </div>
         </div>
 
-        <img src={codeMockupImg} className="mt-10" alt="" />
+        <div className="mt-4 mx-4 md:mt-10">
+          <img src={codeMockupImg} alt="" />
+        </div>
       </div>
 
       <Footer />

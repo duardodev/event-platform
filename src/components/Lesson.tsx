@@ -4,6 +4,7 @@ import ptBR from 'date-fns/locale/pt-BR';
 import classnames from 'classnames';
 
 import { Link, useParams } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 
 interface LessonProps {
   title: string;
@@ -15,6 +16,7 @@ interface LessonProps {
 export function Lesson(props: LessonProps) {
   const { slug } = useParams<{ slug: string }>();
   const isActiveLesson = slug === props.slug;
+  const { setMenuIsOpen } = useAuth();
 
   const isLessonAvailable = isPast(props.availabilityDate);
   const availabilityDateFormatted = format(props.availabilityDate, "E' • 'd' de 'MMMM' • 'k'h'mm", {
@@ -22,8 +24,12 @@ export function Lesson(props: LessonProps) {
   });
 
   return (
-    <Link to={`/platform/lesson/${props.slug}`} className="group">
-      <span className="text-gray-300 first-letter:capitalize block">
+    <Link
+      to={`/platform/lesson/${props.slug}`}
+      onClick={() => setMenuIsOpen(false)}
+      className="group"
+    >
+      <span className="text-gray-300 text-left first-letter:capitalize block">
         {availabilityDateFormatted}
       </span>
 
@@ -67,7 +73,7 @@ export function Lesson(props: LessonProps) {
         </header>
 
         <strong
-          className={classnames('mt-5 block', {
+          className={classnames('mt-5 block text-left', {
             'text-white': isActiveLesson,
             'text-gray-200': !isActiveLesson
           })}

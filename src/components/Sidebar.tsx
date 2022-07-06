@@ -1,12 +1,25 @@
+import { useAuth } from '../contexts/AuthContext';
 import { useGetLessonsQuery } from '../graphql/generated';
 import { Lesson } from './Lesson';
 
+import classNames from 'classnames';
+
 export function Sidebar() {
   const { data } = useGetLessonsQuery();
+  const { menuIsOpen } = useAuth();
 
   return (
-    <aside className="w-[348px] bg-gray-700 p-6 border-l border-gray-600">
-      <span className="text-2xl font-bold pb-6 mb-6 border-b border-gray-500 block">
+    <aside
+      className={classNames(
+        {
+          'w-[348px] bg-gray-700 p-6 border-l border-gray-600 hidden lg:block': menuIsOpen === false
+        },
+        {
+          'w-full h-screen bg-gray-700 p-6 pb-24 overflow-y-scroll fixed z-10': menuIsOpen === true
+        }
+      )}
+    >
+      <span className="text-2xl text-start font-bold pb-6 mb-6 border-b border-gray-500 block">
         Cronograma das aulas
       </span>
 

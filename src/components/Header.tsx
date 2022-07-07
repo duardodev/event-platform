@@ -3,6 +3,7 @@ import { List, SignOut, X } from 'phosphor-react';
 import { useAuth } from '../contexts/AuthContext';
 
 import logoIgniteLab from '../assets/logo.svg';
+import classNames from 'classnames';
 
 export function Header() {
   const navigate = useNavigate();
@@ -16,7 +17,15 @@ export function Header() {
   }
 
   return (
-    <header className="bg-gray-700 border-b border-gray-600">
+    <header
+      className={classNames(
+        { 'bg-gray-700 border-b border-gray-600': menuIsOpen === false },
+        {
+          'bg-gray-700 border-b border-gray-600 fixed z-10 top-0 left-0 right-0':
+            menuIsOpen === true
+        }
+      )}
+    >
       <div className="max-w-[1250px] mx-auto py-5 px-4 flex justify-between">
         <img src={logoIgniteLab} alt="Logo do Ignite Lab" className="w-[200px] sm:w-[237px]" />
 

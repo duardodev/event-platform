@@ -41,11 +41,13 @@ export function Video(props: VideoProps) {
         </div>
       </div>
 
-      <div className="p-8 max-w-[1092px] mx-auto">
-        <div className="flex items-start gap-16">
+      <div className="p-6 max-w-[1092px] mx-auto md:p-8">
+        <div className="flex flex-col items-start gap-8 md:flex-row md:gap-16">
           <div className="flex-1">
-            <h1 className="text-2xl font-bold mb-4">{data.lesson.title}</h1>
-            <p className="text-gray-200 leading-relaxed">{data.lesson.description}</p>
+            <h1 className="text-lg font-bold mb-4 sm:text-2xl">{data.lesson.title}</h1>
+            <p className="text-gray-200 text-sm leading-relaxed sm:text-base">
+              {data.lesson.description}
+            </p>
 
             {data.lesson.teacher && (
               <div className="mt-6 flex items-center gap-4">
@@ -56,17 +58,19 @@ export function Video(props: VideoProps) {
                 />
 
                 <div className="leading-relaxed">
-                  <strong className="text-2xl font-bold block">{data.lesson.teacher.name}</strong>
+                  <strong className="text-lg font-bold block sm:text-2xl">
+                    {data.lesson.teacher.name}
+                  </strong>
                   <span className="text-sm text-gray-200 block">{data.lesson.teacher.bio}</span>
                 </div>
               </div>
             )}
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="w-full flex flex-col gap-4 md:w-auto">
             <a
               href="#"
-              className="p-4 bg-blue-500 text-sm font-bold uppercase rounded flex items-center gap-[10px] hover:bg-blue-700 transition-colors"
+              className="p-4 bg-blue-500 text-sm font-bold uppercase rounded flex items-center justify-center gap-[10px] hover:bg-blue-700 transition-colors"
             >
               <DiscordLogo size={24} />
               Comunidade no Discord
@@ -81,7 +85,7 @@ export function Video(props: VideoProps) {
             </a>
           </div>
         </div>
-        <div className="mt-20 gap-8 grid grid-cols-2">
+        <div className="mt-20 gap-4 grid grid-rows-2 md:grid-cols-2 md:grid-rows-none md:gap-8">
           <a
             href=""
             className="bg-gray-700 rounded overflow-hidden flex items-start gap-6 hover:bg-gray-600 transition-colors"
@@ -90,7 +94,7 @@ export function Video(props: VideoProps) {
               <FileArrowDown size={40} />
             </div>
             <div className="py-6 leading-relaxed">
-              <h1 className="text-2xl font-bold mb-2">Material complementar</h1>
+              <h1 className="text-lg font-bold mb-2 sm:text-2xl">Material complementar</h1>
               <p className="text-sm text-gray-200">
                 Acesse o material complementar para acelerar o seu desenvolvimento
               </p>
@@ -108,7 +112,7 @@ export function Video(props: VideoProps) {
               <Image size={40} />
             </div>
             <div className="py-6 leading-relaxed">
-              <h1 className="text-2xl font-bold mb-2">Wallpapers exclusivos</h1>
+              <h1 className="text-lg font-bold mb-2 sm:text-2xl">Wallpapers exclusivos</h1>
               <p className="text-sm text-gray-200">
                 Baixe wallpapers exclusivos do Ignite Lab e personalize a sua máquina
               </p>

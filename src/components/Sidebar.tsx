@@ -15,7 +15,8 @@ export function Sidebar() {
           'w-[348px] bg-gray-700 p-6 border-l border-gray-600 hidden lg:block': menuIsOpen === false
         },
         {
-          'w-full h-screen bg-gray-700 p-6 pb-24 overflow-y-scroll fixed z-10': menuIsOpen === true
+          'w-full h-screen bg-gray-700 p-6 fixed top-20 bottom-0 left-0 right-0 pb-24 overflow-y-scroll z-10':
+            menuIsOpen === true
         }
       )}
     >

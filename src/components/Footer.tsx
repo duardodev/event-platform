@@ -12,7 +12,7 @@ export function Footer() {
         <div className="flex flex-col items-center gap-6 sm:flex-row">
           <p className="text-sm sm:text-base">Políticas de privacidade</p>
           <p className="text-sm sm:text-base">
-            Desenvolvidor por{' '}
+            Desenvolvido por{' '}
             <a
               href="https://github.com/sampaiocode"
               target="_blank"

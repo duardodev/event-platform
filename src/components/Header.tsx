@@ -12,6 +12,8 @@ export function Header() {
   function handleOut() {
     if (localStorage.getItem('registered')) {
       localStorage.removeItem('registered');
+
+      document.body.style.overflowY = 'auto';
       navigate('/');
     }
   }

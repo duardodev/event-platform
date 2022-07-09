@@ -1,13 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 import { List, SignOut, X } from 'phosphor-react';
-import { useAuth } from '../contexts/AuthContext';
+import { useMenu } from '../contexts/MenuContext';
 
 import logoIgniteLab from '../assets/logo.svg';
 import classNames from 'classnames';
 
 export function Header() {
   const navigate = useNavigate();
-  const { menuIsOpen, setMenuIsOpen } = useAuth();
+  const { menuIsOpen, setMenuIsOpen } = useMenu();
 
   function handleOut() {
     if (localStorage.getItem('registered')) {

@@ -4,7 +4,7 @@ import ptBR from 'date-fns/locale/pt-BR';
 import classnames from 'classnames';
 
 import { Link, useParams } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
+import { useMenu } from '../contexts/MenuContext';
 
 interface LessonProps {
   title: string;
@@ -16,7 +16,7 @@ interface LessonProps {
 export function Lesson(props: LessonProps) {
   const { slug } = useParams<{ slug: string }>();
   const isActiveLesson = slug === props.slug;
-  const { setMenuIsOpen } = useAuth();
+  const { setMenuIsOpen } = useMenu();
 
   const isLessonAvailable = isPast(props.availabilityDate);
   const availabilityDateFormatted = format(props.availabilityDate, "E' • 'd' de 'MMMM' • 'k'h'mm", {

@@ -1,4 +1,4 @@
-import { useAuth } from '../contexts/AuthContext';
+import { useMenu } from '../contexts/MenuContext';
 import { useGetLessonsQuery } from '../graphql/generated';
 import { Lesson } from './Lesson';
 
@@ -6,7 +6,7 @@ import classNames from 'classnames';
 
 export function Sidebar() {
   const { data } = useGetLessonsQuery();
-  const { menuIsOpen } = useAuth();
+  const { menuIsOpen } = useMenu();
 
   return (
     <aside

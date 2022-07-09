@@ -21,8 +21,7 @@ export function Header() {
       className={classNames(
         { 'bg-gray-700 border-b border-gray-600': menuIsOpen === false },
         {
-          'bg-gray-700 border-b border-gray-600 fixed z-10 top-0 left-0 right-0':
-            menuIsOpen === true
+          'bg-gray-700 fixed z-50 top-0 left-0 right-0': menuIsOpen === true
         }
       )}
     >

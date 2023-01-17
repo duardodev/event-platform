@@ -20,7 +20,7 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 - [Vitejs](https://vitejs.dev/)
 - [Vimejs](https://vimejs.com/)
 - [GraphQL](https://graphql.org/)
-- [GraphCMS](https://graphcms.com/)
+- [Hygraph](https://hygraph.com/)
 - [Apollo](https://www.apollographql.com/)
 
 ## ✅ Novas funcionalidades
